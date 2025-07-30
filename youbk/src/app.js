@@ -4,9 +4,7 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 
-app.get("/", (req, res) => {
-  res.status(200).send("✅ TwitPlayy Backend is up and running!");
-});
+
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -47,6 +45,19 @@ app.use("/api/v1/dashboard", dashboardRouter)
 app.use("/api/v1/about", aboutRouter)
 
 // http://localhost:3000/api/v1/users/register
+
+// Root route
+app.get("/", (req, res) => {
+  res.status(200).send("✅ TwitPlayy Backend is up and running!");
+});
+
+// 404 fallback
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
 
 
 
