@@ -61,13 +61,9 @@ console.log("🏠 Setting up root route...");
 // Root route
 app.get("/", (req, res) => {
     console.log("🎯 Root route accessed!");
-    res.status(200).json({
-        success: true,
-        message: "✅ TwitPlayy Backend is up and running!",
-        timestamp: new Date().toISOString(),
-        environment: process.env.NODE_ENV || 'development'
-    });
+    res.status(200).send("✅ TwitPlayy Backend is up and running!");
 });
+
 
 console.log("🚫 Setting up 404 handler...");
 
