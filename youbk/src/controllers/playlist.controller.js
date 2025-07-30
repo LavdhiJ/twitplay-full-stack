@@ -82,39 +82,7 @@ const getPlaylistById = asyncHandler(async (req, res) => {
     .json(new apiResponse(200, playlist, "Playlist fetched successfully"));
 });
 
-/*const addVideoToPlaylist = asyncHandler(async (req, res) => {
-  const { playlistId, videoId } = req.params;
 
-  if (!isValidObjectId(playlistId)) {
-    throw new apiError(400, "Invalid playlistId");
-  }
-
-  if (!isValidObjectId(videoId)) {
-    throw new apiError(400, "Invalid videoId");
-  }
-
-  const playlist = await Playlist.findByIdAndUpdate(
-    playlistId,
-    {
-      $addToSet: {
-        videos: videoId,
-      },
-    },
-    {
-      new: true,
-    }
-  );
-
-  if (!playlist) throw new apiError(500, "Error while adding video to playlist");
-
-  return res.status(200).json(
-    new apiResponse(
-      200,
-      { isAdded: true },
-      "Video added to playlist successfully"
-    )
-  );
-});*/
 const addVideoToPlaylist = asyncHandler(async (req, res) => {
   const { playlistId, videoId } = req.params;
 
