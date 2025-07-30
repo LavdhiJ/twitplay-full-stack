@@ -1,11 +1,12 @@
 {
   "name": "youbk",
   "version": "1.0.0",
-  "description": "hi",
-  "license": "ISC",
-  "author": "al",
-  "type": "module",
+  "description": "",
   "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --import dotenv/config src/index.js",
