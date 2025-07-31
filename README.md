@@ -1,2 +1,2 @@
 # TwitPlay
-a full stack project which has feature of youtune and twitter in one single platform
+a full stack project which has feature of video sharing and micro blogging in one single platform
